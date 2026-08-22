@@ -1,0 +1,32 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        int low = 0; // o mila to left
+        int mid = 0; // check number
+        int high = nums.length - 1;//2 mila to right
+
+        while(mid <= high){
+            if (nums[mid] == 0){
+
+                //swapping
+                int swap = nums[low];
+                nums[low] = nums[mid] ;
+                nums[mid] = swap;
+
+                low++;
+                mid++;
+
+            } else if (nums[mid] == 1) {
+                mid++;
+            
+            } else {
+
+                int swap = nums[mid];
+                nums[mid] = nums[high];
+                nums[high] = swap;
+
+                high--;
+            }
+        }
+    
+    }
+}
